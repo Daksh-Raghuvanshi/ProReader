@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ProReader</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+	<header>
+		<h1>ProReader</h1>
+	</header>
+
+	<main>
+		<form action="/upload" method="POST" enctype="multipart/form-data">
+			<input type="file" name="image" required>
+			<input type="submit" value="Upload">
+		</form>
+
+		{% if prediction %}
+			<h2>Prediction:</h2>
+			<p>{{ prediction }}</p>
+		{% endif %}
+	</main>
+
+	<nav>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </nav>
+  
+  <div class="content">
+    <h2>Welcome to my Flask app!</h2>
+    <p>This is some sample content.</p>
+  </div>
+  
+  <footer>
+    <p>&copy; Made by Daksh Raghuvanshi</p>
+  </footer>
+</body>
+</html>
